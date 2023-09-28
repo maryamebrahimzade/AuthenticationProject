@@ -45,13 +45,13 @@ class AuthenticationApplicationTests {
     @BeforeAll
     public void init() {
         User user = User.builder()
-                .username("arezooalipanah")
-                .password("$2a$10$f7M0SWWUJ8RSpLRDDpw1S.RoBWLBkVTDzz/bJpgmjdl39EyK1mGnK")
-                .firstName("arezoo")
-                .lastName("alipanah")
-                .mobile("09195529919")
-                .accountNumber("636214105672306558")
-                .cardNumber("6362141056723068")
+                .username("maryam")
+                .password("$2a$10$aHSBJUZKX2wCr3EQbYA8F.lHRu.Cgdy1TQc2wZblsm3q3ZYxOoUjK")
+                .firstName("maryam")
+                .lastName("ebrahimzade")
+                .mobile("09127372713")
+                .accountNumber("123456789123456789")
+                .cardNumber("5859831045760950")
                 .build();
         this.userRepository.save(user);
     }
@@ -59,13 +59,13 @@ class AuthenticationApplicationTests {
     @Test
     public void givenUserList_whenFindAll_thenUsersList() {
         User user = User.builder()
-                .username("user2")
-                .password("22209318")
-                .firstName("arezoo2")
-                .lastName("alipanah2")
-                .mobile("0127292561")
-                .accountNumber("636214105672306558")
-                .cardNumber("6362141056723068")
+                .username("zahra")
+                .password("123Passwo&rd")
+                .firstName("zahra")
+                .lastName("ebrahimzade")
+                .mobile("09127372713")
+                .accountNumber("123456789123456789")
+                .cardNumber("5859831045760950")
                 .build();
         userRepository.save(user);
         List<User> users = userRepository.findAll();
@@ -76,13 +76,13 @@ class AuthenticationApplicationTests {
     @Test
     public void givenUserObject_whenDeleteById_thenRemoveUser() {
         User user = User.builder()
-                .username("user3")
-                .password("22209318")
-                .firstName("arezoo3")
-                .lastName("alipanah")
-                .mobile("0127292561")
-                .accountNumber("636214105672306558")
-                .cardNumber("6362141056723068")
+                .username("asma")
+                .password("123Passwo&rd")
+                .firstName("asma")
+                .lastName("ebrahimzade")
+                .mobile("09127372713")
+                .accountNumber("123456789123456789")
+                .cardNumber("5859831045760950")
                 .build();
         userRepository.save(user);
         userRepository.deleteById(user.getId());
@@ -94,6 +94,6 @@ class AuthenticationApplicationTests {
     @Test
     public void givenToken_extractToken_thenGetUsername() {
         String username = jwtService.extractUsername(jwtToken);
-        Assertions.assertThat(username).isEqualTo("arezooalipanah");
+        Assertions.assertThat(username).isEqualTo("maryam");
     }
 }
